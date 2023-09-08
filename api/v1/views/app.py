@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""An app for Registering Blueprint and starting Flask"""
+'''
+    app for registering blueprint and starting flask
+'''
 from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 from models import storage
@@ -14,7 +16,9 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def tear_down(self):
-    """close query after each session"""
+    '''
+    close query after each session
+    '''
     storage.close()
 
 
